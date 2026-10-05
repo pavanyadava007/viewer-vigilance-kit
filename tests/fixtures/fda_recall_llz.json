@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+  "terms": "https://open.fda.gov/terms/",
+  "license": "https://open.fda.gov/license/",
+  "last_updated": "2026-10-01",
+  "results": {
+   "skip": 0,
+   "limit": 3,
+   "total": 19
+  }
+ },
+ "results": [
+  {
+   "cfres_id": "218475",
+   "product_res_number": "Z-1475-2026",
+   "event_date_initiated": "2026-01-16",
+   "event_date_posted": "2026-02-27",
+   "recall_status": "Open, Classified",
+   "res_event_number": "98368",
+   "product_code": "LLZ",
+   "k_numbers": [
+    "K131977"
+   ],
+   "product_description": "GE Healthcare Centricity Universal Viewer Zero Footprint Client, Model Numbers:  2110344-039, 2110344-046, 2110344-047; System, Image Processing, Radiological",
+   "code_info": "(trimmed in fixture)",
+   "firm_fei_number": "3004526608",
+   "recalling_firm": "GE Healthcare",
+   "address_1": "500 W Monroe St",
+   "city": "Chicago",
+   "state": "IL",
+   "postal_code": "60661-3671",
+   "reason_for_recall": "Under certain workflows, patient information shown in the viewer may not match the images displayed on Centricity Universal Viewer Zero Footprint Client (ZFP) with versions ZFP v6.0: SP11.6, SP11.6.0.1 and SP11.6.1 on systems with Patient Timeline installed,",
+   "root_cause_description": "Device Design",
+   "action": "GE Healthcare issued an URGENT MEDICAL DEVICE CORRECTION NOTICE to its consignees on 01/16/2026 by letter delivered via traceable means.  The notice explained the issue and risk, and requested the following:  \nActions to be taken by Customer/User:  \n\"To determine whether you have ZFP Patient Timeline configured at your site, please contact your site administrator.\n\" If you do not have the ZFP Patient Timeline, you can continue to use Centricity Universal Viewer Zero Footprint Client (ZFP) DICOM viewer.\"  \n\"Review all patient studies that were reviewed using the ZFP Patient Timeline to ensure the correct images were reviewed for each patient.\nGE HealthCare recommends that you discontinue the use of ZFP Patient Timeline.\" \nIf you do have the ZFP Patient Timeline, pending correction by GE HealthCare, please follow the instructions below:  \nIf your site requires the use of Patient Timeline, the following steps must be followed each time a different patient is loaded to ensure the proper series is displayed for this patient:\n1. Change the layout to single viewport by selecting the Full view in the Layout Selector (User Manual Section 2.5.1).\n2. Manually drag and drop the series from the Navigator into the viewport (User Manual Section 2.4.1).  \n\nGE HealthCare will correct all affected products at no cost to you.  A GE HealthCare representative will contact you to arrange for the correction.  \nFor questions or concerns regarding this notification, please contact GE HealthCare Service at 1-800-437-1171 or your local Service Representative.",
+   "product_quantity": "250 units",
+   "distribution_pattern": "(trimmed in fixture)"
+  },
+  {
+   "cfres_id": "218704",
+   "product_res_number": "Z-1569-2026",
+   "event_date_initiated": "2026-01-30",
+   "event_date_posted": "2026-03-16",
+   "recall_status": "Open, Classified",
+   "res_event_number": "98428",
+   "product_code": "LLZ",
+   "k_numbers": [
+    "K182419"
+   ],
+   "product_description": "Centricity Universal Viewer Software Versions 7.0 through 7.0 Sp2.0.1, a device that displays medical images (including mammograms) and data from various imaging sources, Model Numbers 5826659-027, 5826659-029, 5826659-032, 5826659-033, 5826659-028, 5826659-034, 5826659-030, 5826659-019, 5826659-022, 5826659-026, 5826659-023, 5826659-031, 5826659-025, 5826659-002, 5826659-021, 5826659-037, 5826659-014, 5826659-016, 5826659-013",
+   "code_info": "(trimmed in fixture)",
+   "firm_fei_number": "2126677",
+   "recalling_firm": "GE Medical Systems, LLC",
+   "address_1": "3000 N Grandview Blvd",
+   "city": "Waukesha",
+   "state": "WI",
+   "postal_code": "53188-1615",
+   "reason_for_recall": "There is a potential cybersecurity vulnerability affecting certain versions of Centricity Universal Viewer. User login credentials may be exposed on the local client workstation, which could allow an unauthorized individual to potentially impact system availability and/or manipulate data.",
+   "root_cause_description": "Software design",
+   "action": "An URGENT MEDICAL DEVICE CORRECTION notification letter dated 1/30/26 was sent to customers.\n\nActions to be taken by Customer/User\nPending corrections from GE HealthCare, you can continue using your device by following the instructions below:\nEnsure workstations have appropriate security controls per product manuals.\nImplement network account authentication by using Active Directory/LDAP services for user management.\nIf network account authentication is not possible at your site, please contact GE HealthCare Service to request temporary steps to mitigate the issue.\nEnsure all potential users in your facility are informed of this safety notification.\nPlease retain this document for your records.\nPlease complete and return the attached acknowledgement form to recall.85491@gehealthcare.com.\n\nGE HealthCare will correct all affected products at no cost to you. A GE HealthCare representative will contact you to arrange the correction.\n\nIf you have any questions or concerns regarding this notification, please contact GE HealthCare Service at 1-800-437-1171 or your local Service Representative.",
+   "product_quantity": "1568 units",
+   "distribution_pattern": "(trimmed in fixture)"
+  },
+  {
+   "cfres_id": "218705",
+   "product_res_number": "Z-1570-2026",
+   "event_date_initiated": "2026-01-30",
+   "event_date_posted": "2026-03-16",
+   "recall_status": "Open, Classified",
+   "res_event_number": "98428",
+   "product_code": "LLZ",
+   "k_numbers": [
+    "K150420"
+   ],
+   "product_description": "Centricity Universal Viewer Software Versions 6.0 through 6.0 Sp10.4.1, a device that displays medical images (including mammograms) and data from various imaging sources, Model Numbers 2088026-406, 2100169-001, 2088026-985, 2088026-971, 2088026-614, 2088026-713, 2088026-994, 2100491-006, 2088026-723, 2088026-308, 2104867-044, 2100491-012, 2088026-962, 2088026-969, 2102676-001, 2088026-936, 2088026-960, K1220JWED, 2088026-806, 2088026-506, 2088026-026, 2088026-970, 2088026-943, 2088026-990, 2088026-940, 2088026-959, 2088026-967, 2088026-989, 2104867-045, 2088026-993, 2088026-306, 2102675-010, 2088026-948, 2088026-957, 2088026-973, 2088026-946, 2088026-715, 2088026-906",
+   "code_info": "(trimmed in fixture)",
+   "firm_fei_number": "2126677",
+   "recalling_firm": "GE Medical Systems, LLC",
+   "address_1": "3000 N Grandview Blvd",
+   "city": "Waukesha",
+   "state": "WI",
+   "postal_code": "53188-1615",
+   "reason_for_recall": "There is a potential cybersecurity vulnerability affecting certain versions of Centricity Universal Viewer. User login credentials may be exposed on the local client workstation, which could allow an unauthorized individual to potentially impact system availability and/or manipulate data.",
+   "root_cause_description": "Software design",
+   "action": "An URGENT MEDICAL DEVICE CORRECTION notification letter dated 1/30/26 was sent to customers.\n\nActions to be taken by Customer/User\nPending corrections from GE HealthCare, you can continue using your device by following the instructions below:\nEnsure workstations have appropriate security controls per product manuals.\nImplement network account authentication by using Active Directory/LDAP services for user management.\nIf network account authentication is not possible at your site, please contact GE HealthCare Service to request temporary steps to mitigate the issue.\nEnsure all potential users in your facility are informed of this safety notification.\nPlease retain this document for your records.\nPlease complete and return the attached acknowledgement form to recall.85491@gehealthcare.com.\n\nGE HealthCare will correct all affected products at no cost to you. A GE HealthCare representative will contact you to arrange the correction.\n\nIf you have any questions or concerns regarding this notification, please contact GE HealthCare Service at 1-800-437-1171 or your local Service Representative.",
+   "product_quantity": "797 units",
+   "distribution_pattern": "(trimmed in fixture)"
+  }
+ ]
+}
