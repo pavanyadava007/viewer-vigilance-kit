@@ -1,0 +1,14 @@
+{
+  "n_requirements": 16,
+  "n_test_functions": 51,
+  "n_test_items": 72,
+  "n_tests_traced": 47,
+  "untraced_tests": [
+    "tests/test_viewer_smoke.py::test_load_ct_small",
+    "tests/test_viewer_smoke.py::test_load_mr_small",
+    "tests/test_viewer_smoke.py::test_load_phantom_series",
+    "tests/test_vigil.py::test_classification_lookup"
+  ],
+  "problems": [],
+  "ok": true
+}

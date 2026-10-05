@@ -1,0 +1,204 @@
+{
+  "n_defects": 15,
+  "tests_per_tier": {
+    "smoke": 6,
+    "unit": 42,
+    "unit_golden": 59,
+    "golden_only": 17
+  },
+  "caught": {
+    "smoke": 0,
+    "unit": 15,
+    "unit_golden": 15,
+    "golden_only": 15
+  },
+  "catch_rate": {
+    "smoke": 0.0,
+    "unit": 1.0,
+    "unit_golden": 1.0,
+    "golden_only": 1.0
+  },
+  "defects": [
+    {
+      "defect": "ignore_rescale_intercept",
+      "description": "Rescale Intercept ignored (CT values off by +1024 HU)",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 5,
+      "failing_tests_unit_golden": 10,
+      "failing_tests_golden_only": 5
+    },
+    {
+      "defect": "rescale_in_storage_dtype",
+      "description": "rescale done in uint16 storage dtype, negative HU wrap around",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 4,
+      "failing_tests_golden_only": 2
+    },
+    {
+      "defect": "swap_pixel_spacing",
+      "description": "row and column PixelSpacing swapped in measurements",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 3,
+      "failing_tests_golden_only": 1
+    },
+    {
+      "defect": "measurement_ignores_spacing",
+      "description": "distance reported in pixels instead of mm",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 4,
+      "failing_tests_golden_only": 2
+    },
+    {
+      "defect": "flip_lr_letter",
+      "description": "patient x axis mapped to R instead of L in orientation labels",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 4,
+      "failing_tests_unit_golden": 10,
+      "failing_tests_golden_only": 6
+    },
+    {
+      "defect": "top_bottom_labels_swapped",
+      "description": "top and bottom orientation labels swapped",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 9,
+      "failing_tests_golden_only": 7
+    },
+    {
+      "defect": "sort_by_filename",
+      "description": "series sorted by file name instead of slice position",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 4,
+      "failing_tests_unit_golden": 7,
+      "failing_tests_golden_only": 3
+    },
+    {
+      "defect": "sort_by_z_only",
+      "description": "series sorted by z coordinate instead of position along the normal",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 1,
+      "failing_tests_unit_golden": 2,
+      "failing_tests_golden_only": 1
+    },
+    {
+      "defect": "window_off_by_one",
+      "description": "window uses width instead of width-1 and centre instead of centre-0.5",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 3,
+      "failing_tests_unit_golden": 8,
+      "failing_tests_golden_only": 5
+    },
+    {
+      "defect": "multivalue_window_ignored",
+      "description": "multi-valued WindowCenter/Width ignored, falls back to min/max",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 6,
+      "failing_tests_golden_only": 4
+    },
+    {
+      "defect": "ignore_monochrome1",
+      "description": "MONOCHROME1 images not inverted",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 1,
+      "failing_tests_unit_golden": 2,
+      "failing_tests_golden_only": 1
+    },
+    {
+      "defect": "contrast_inverted",
+      "description": "contrast factor widens the window instead of narrowing it",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 1,
+      "failing_tests_unit_golden": 3,
+      "failing_tests_golden_only": 2
+    },
+    {
+      "defect": "zoom_about_origin",
+      "description": "zoom anchored at the top-left corner instead of the image centre",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 2,
+      "failing_tests_unit_golden": 4,
+      "failing_tests_golden_only": 2
+    },
+    {
+      "defect": "pan_sign_flipped",
+      "description": "pan moves the image opposite to the drag direction",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 1,
+      "failing_tests_unit_golden": 3,
+      "failing_tests_golden_only": 2
+    },
+    {
+      "defect": "vertical_flip_render",
+      "description": "rendered rows written bottom-up",
+      "caught_smoke": false,
+      "caught_unit": true,
+      "caught_unit_golden": true,
+      "caught_golden_only": true,
+      "failing_tests_smoke": 0,
+      "failing_tests_unit": 3,
+      "failing_tests_unit_golden": 9,
+      "failing_tests_golden_only": 6
+    }
+  ],
+  "runtime_s": 50.6
+}

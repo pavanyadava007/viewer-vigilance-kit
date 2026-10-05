@@ -1,0 +1,72 @@
+{
+  "run_date": "2026-10-05",
+  "maude_query": {
+    "date_field": "date_received",
+    "from": "2025-10-05",
+    "to": "2026-10-05",
+    "LLZ": {
+      "api_total": 426,
+      "fetched": 426
+    },
+    "LMD": {
+      "api_total": 51,
+      "fetched": 51
+    },
+    "LMB": {
+      "api_total": 3,
+      "fetched": 3
+    },
+    "PGY": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "QIH": {
+      "api_total": 3,
+      "fetched": 3
+    }
+  },
+  "recall_query": {
+    "date_field": "event_date_initiated",
+    "from": "2024-10-05",
+    "to": "2026-10-05",
+    "LLZ": {
+      "api_total": 52,
+      "fetched": 52
+    },
+    "LMD": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "LMB": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "PGY": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "QIH": {
+      "api_total": 1,
+      "fetched": 1
+    }
+  },
+  "bfarm_list_pages": 10,
+  "per_source": {
+    "FDA_MAUDE": {
+      "n": 483,
+      "min_date": "2025-10-06",
+      "max_date": "2026-08-31"
+    },
+    "FDA_RECALL": {
+      "n": 53,
+      "min_date": "2024-10-10",
+      "max_date": "2026-07-31"
+    },
+    "BFARM_FSN": {
+      "n": 500,
+      "min_date": "2026-02-05",
+      "max_date": "2026-10-02"
+    }
+  },
+  "duplicates_removed": 0
+}

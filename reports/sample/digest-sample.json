@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-05",
+  "fetched": {
+    "FDA_MAUDE": {
+      "n": 108,
+      "min_date": "2026-07-07",
+      "max_date": "2026-08-31"
+    },
+    "FDA_RECALL": {
+      "n": 11,
+      "min_date": "2026-06-19",
+      "max_date": "2026-07-31"
+    },
+    "BFARM_FSN": {
+      "n": 20,
+      "min_date": "2026-09-22",
+      "max_date": "2026-10-02"
+    }
+  },
+  "new": {
+    "FDA_MAUDE": {
+      "n": 108,
+      "min_date": "2026-07-07",
+      "max_date": "2026-08-31"
+    },
+    "FDA_RECALL": {
+      "n": 11,
+      "min_date": "2026-06-19",
+      "max_date": "2026-07-31"
+    },
+    "BFARM_FSN": {
+      "n": 20,
+      "min_date": "2026-09-22",
+      "max_date": "2026-10-02"
+    }
+  },
+  "new_relevant": 125,
+  "maude_query": {
+    "date_field": "date_received",
+    "from": "2026-07-07",
+    "to": "2026-10-05",
+    "LLZ": {
+      "api_total": 93,
+      "fetched": 93
+    },
+    "LMD": {
+      "api_total": 15,
+      "fetched": 15
+    },
+    "LMB": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "PGY": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "QIH": {
+      "api_total": 0,
+      "fetched": 0
+    }
+  },
+  "recall_query": {
+    "date_field": "event_date_initiated",
+    "from": "2026-06-07",
+    "to": "2026-10-05",
+    "LLZ": {
+      "api_total": 11,
+      "fetched": 11
+    },
+    "LMD": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "LMB": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "PGY": {
+      "api_total": 0,
+      "fetched": 0
+    },
+    "QIH": {
+      "api_total": 0,
+      "fetched": 0
+    }
+  },
+  "http": {
+    "network": 0,
+    "cache": 31
+  }
+}

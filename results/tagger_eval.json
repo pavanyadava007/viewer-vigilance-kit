@@ -1,0 +1,360 @@
+{
+  "corpus": "corpus.jsonl",
+  "bfarm": {
+    "imaging": {
+      "dev": {
+        "n": 249,
+        "positives": 15,
+        "tp": 6,
+        "fp": 18,
+        "fn": 9,
+        "precision": 0.25,
+        "recall": 0.4,
+        "f1": 0.308
+      },
+      "test": {
+        "n": 251,
+        "positives": 18,
+        "tp": 6,
+        "fp": 11,
+        "fn": 12,
+        "precision": 0.353,
+        "recall": 0.333,
+        "f1": 0.343
+      },
+      "all": {
+        "n": 500,
+        "positives": 33,
+        "tp": 12,
+        "fp": 29,
+        "fn": 21,
+        "precision": 0.293,
+        "recall": 0.364,
+        "f1": 0.324
+      }
+    },
+    "software_or_imaging": {
+      "dev": {
+        "n": 249,
+        "positives": 35,
+        "tp": 13,
+        "fp": 11,
+        "fn": 22,
+        "precision": 0.542,
+        "recall": 0.371,
+        "f1": 0.441
+      },
+      "test": {
+        "n": 251,
+        "positives": 40,
+        "tp": 11,
+        "fp": 6,
+        "fn": 29,
+        "precision": 0.647,
+        "recall": 0.275,
+        "f1": 0.386
+      },
+      "all": {
+        "n": 500,
+        "positives": 75,
+        "tp": 24,
+        "fp": 17,
+        "fn": 51,
+        "precision": 0.585,
+        "recall": 0.32,
+        "f1": 0.414
+      }
+    },
+    "date_range": [
+      "2026-02-05",
+      "2026-10-02"
+    ]
+  },
+  "maude": {
+    "n_reports": 483,
+    "n_with_text": 424,
+    "date_range": [
+      "2025-10-06",
+      "2026-08-31"
+    ],
+    "dev": {
+      "per_category": {
+        "image_display": {
+          "n": 235,
+          "positives": 49,
+          "tp": 12,
+          "fp": 14,
+          "fn": 37,
+          "precision": 0.462,
+          "recall": 0.245,
+          "f1": 0.32
+        },
+        "wrong_patient": {
+          "n": 235,
+          "positives": 1,
+          "tp": 0,
+          "fp": 4,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "measurement": {
+          "n": 235,
+          "positives": 5,
+          "tp": 2,
+          "fp": 8,
+          "fn": 3,
+          "precision": 0.2,
+          "recall": 0.4,
+          "f1": 0.267
+        },
+        "orientation_laterality": {
+          "n": 235,
+          "positives": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null
+        },
+        "data_loss": {
+          "n": 235,
+          "positives": 1,
+          "tp": 0,
+          "fp": 11,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "performance_freeze": {
+          "n": 235,
+          "positives": 7,
+          "tp": 2,
+          "fp": 15,
+          "fn": 5,
+          "precision": 0.118,
+          "recall": 0.286,
+          "f1": 0.167
+        },
+        "interoperability": {
+          "n": 235,
+          "positives": 48,
+          "tp": 24,
+          "fp": 19,
+          "fn": 24,
+          "precision": 0.558,
+          "recall": 0.5,
+          "f1": 0.527
+        },
+        "cybersecurity": {
+          "n": 235,
+          "positives": 27,
+          "tp": 24,
+          "fp": 2,
+          "fn": 3,
+          "precision": 0.923,
+          "recall": 0.889,
+          "f1": 0.906
+        }
+      },
+      "micro": {
+        "n": 235,
+        "positives": 138,
+        "tp": 64,
+        "fp": 74,
+        "fn": 74,
+        "precision": 0.464,
+        "recall": 0.464
+      }
+    },
+    "test": {
+      "per_category": {
+        "image_display": {
+          "n": 248,
+          "positives": 46,
+          "tp": 10,
+          "fp": 17,
+          "fn": 36,
+          "precision": 0.37,
+          "recall": 0.217,
+          "f1": 0.274
+        },
+        "wrong_patient": {
+          "n": 248,
+          "positives": 3,
+          "tp": 1,
+          "fp": 3,
+          "fn": 2,
+          "precision": 0.25,
+          "recall": 0.333,
+          "f1": 0.286
+        },
+        "measurement": {
+          "n": 248,
+          "positives": 3,
+          "tp": 3,
+          "fp": 9,
+          "fn": 0,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4
+        },
+        "orientation_laterality": {
+          "n": 248,
+          "positives": 1,
+          "tp": 0,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "data_loss": {
+          "n": 248,
+          "positives": 5,
+          "tp": 1,
+          "fp": 17,
+          "fn": 4,
+          "precision": 0.056,
+          "recall": 0.2,
+          "f1": 0.087
+        },
+        "performance_freeze": {
+          "n": 248,
+          "positives": 11,
+          "tp": 2,
+          "fp": 19,
+          "fn": 9,
+          "precision": 0.095,
+          "recall": 0.182,
+          "f1": 0.125
+        },
+        "interoperability": {
+          "n": 248,
+          "positives": 58,
+          "tp": 33,
+          "fp": 23,
+          "fn": 25,
+          "precision": 0.589,
+          "recall": 0.569,
+          "f1": 0.579
+        },
+        "cybersecurity": {
+          "n": 248,
+          "positives": 21,
+          "tp": 16,
+          "fp": 1,
+          "fn": 5,
+          "precision": 0.941,
+          "recall": 0.762,
+          "f1": 0.842
+        }
+      },
+      "micro": {
+        "n": 248,
+        "positives": 148,
+        "tp": 66,
+        "fp": 90,
+        "fn": 82,
+        "precision": 0.423,
+        "recall": 0.446
+      }
+    },
+    "all": {
+      "per_category": {
+        "image_display": {
+          "n": 483,
+          "positives": 95,
+          "tp": 22,
+          "fp": 31,
+          "fn": 73,
+          "precision": 0.415,
+          "recall": 0.232,
+          "f1": 0.297
+        },
+        "wrong_patient": {
+          "n": 483,
+          "positives": 4,
+          "tp": 1,
+          "fp": 7,
+          "fn": 3,
+          "precision": 0.125,
+          "recall": 0.25,
+          "f1": 0.167
+        },
+        "measurement": {
+          "n": 483,
+          "positives": 8,
+          "tp": 5,
+          "fp": 17,
+          "fn": 3,
+          "precision": 0.227,
+          "recall": 0.625,
+          "f1": 0.333
+        },
+        "orientation_laterality": {
+          "n": 483,
+          "positives": 1,
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": null
+        },
+        "data_loss": {
+          "n": 483,
+          "positives": 6,
+          "tp": 1,
+          "fp": 28,
+          "fn": 5,
+          "precision": 0.034,
+          "recall": 0.167,
+          "f1": 0.057
+        },
+        "performance_freeze": {
+          "n": 483,
+          "positives": 18,
+          "tp": 4,
+          "fp": 34,
+          "fn": 14,
+          "precision": 0.105,
+          "recall": 0.222,
+          "f1": 0.143
+        },
+        "interoperability": {
+          "n": 483,
+          "positives": 106,
+          "tp": 57,
+          "fp": 42,
+          "fn": 49,
+          "precision": 0.576,
+          "recall": 0.538,
+          "f1": 0.556
+        },
+        "cybersecurity": {
+          "n": 483,
+          "positives": 48,
+          "tp": 40,
+          "fp": 3,
+          "fn": 8,
+          "precision": 0.93,
+          "recall": 0.833,
+          "f1": 0.879
+        }
+      },
+      "micro": {
+        "n": 483,
+        "positives": 286,
+        "tp": 130,
+        "fp": 164,
+        "fn": 156,
+        "precision": 0.442,
+        "recall": 0.455
+      }
+    }
+  }
+}

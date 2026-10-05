@@ -1,0 +1,147 @@
+{
+  "chosen": [
+    {
+      "product_code": "LLZ",
+      "device_name": "System, Image Processing, Radiological",
+      "device_class": "2",
+      "regulation_number": "892.2050",
+      "medical_specialty": "Radiology",
+      "config_name": "System, Image Processing, Radiological",
+      "name_matches_config": true
+    },
+    {
+      "product_code": "LMD",
+      "device_name": "System, Digital Image Communications, Radiological",
+      "device_class": "1",
+      "regulation_number": "892.2020",
+      "medical_specialty": "Radiology",
+      "config_name": "System, Digital Image Communications, Radiological",
+      "name_matches_config": true
+    },
+    {
+      "product_code": "LMB",
+      "device_name": "Device, Digital Image Storage, Radiological",
+      "device_class": "1",
+      "regulation_number": "892.2010",
+      "medical_specialty": "Radiology",
+      "config_name": "Device, Digital Image Storage, Radiological",
+      "name_matches_config": true
+    },
+    {
+      "product_code": "PGY",
+      "device_name": "Display, Diagnostic Radiology",
+      "device_class": "2",
+      "regulation_number": "892.2050",
+      "medical_specialty": "Radiology",
+      "config_name": "Display, Diagnostic Radiology",
+      "name_matches_config": true
+    },
+    {
+      "product_code": "QIH",
+      "device_name": "Automated Radiological Image Processing Software",
+      "device_class": "2",
+      "regulation_number": "892.2050",
+      "medical_specialty": "Radiology",
+      "config_name": "Automated Radiological Image Processing Software",
+      "name_matches_config": true
+    }
+  ],
+  "all_verified": true,
+  "candidates_892_2010_to_2050": [
+    {
+      "product_code": "LLZ",
+      "regulation_number": "892.2050",
+      "device_name": "System, Image Processing, Radiological"
+    },
+    {
+      "product_code": "LMA",
+      "regulation_number": "892.2030",
+      "device_name": "Digitizer, Image, Radiological"
+    },
+    {
+      "product_code": "LMB",
+      "regulation_number": "892.2010",
+      "device_name": "Device, Digital Image Storage, Radiological"
+    },
+    {
+      "product_code": "LMC",
+      "regulation_number": "892.2040",
+      "device_name": "Camera, Multi Format, Radiological"
+    },
+    {
+      "product_code": "LMD",
+      "regulation_number": "892.2020",
+      "device_name": "System, Digital Image Communications, Radiological"
+    },
+    {
+      "product_code": "NFF",
+      "regulation_number": "892.2010",
+      "device_name": "Device, Storage, Images, Ophthalmic"
+    },
+    {
+      "product_code": "NFG",
+      "regulation_number": "892.2020",
+      "device_name": "Device, Communications, Images, Ophthalmic"
+    },
+    {
+      "product_code": "NFH",
+      "regulation_number": "892.2030",
+      "device_name": "Digitizer, Images, Ophthalmic"
+    },
+    {
+      "product_code": "NFI",
+      "regulation_number": "892.2040",
+      "device_name": "Device, Hardcopy, Images, Ophthalmic"
+    },
+    {
+      "product_code": "NFJ",
+      "regulation_number": "892.2050",
+      "device_name": "System, Image Management, Ophthalmic"
+    },
+    {
+      "product_code": "NWE",
+      "regulation_number": "892.2050",
+      "device_name": "Colon Computed Tomography System, Computer Aided Detection"
+    },
+    {
+      "product_code": "OEB",
+      "regulation_number": "892.2050",
+      "device_name": "Lung Computed Tomography System, Computer-Aided Detection"
+    },
+    {
+      "product_code": "OMJ",
+      "regulation_number": "892.2050",
+      "device_name": "Chest X-Ray Computer Aided Detection"
+    },
+    {
+      "product_code": "PGY",
+      "regulation_number": "892.2050",
+      "device_name": "Display, Diagnostic Radiology"
+    },
+    {
+      "product_code": "PZO",
+      "regulation_number": "892.2050",
+      "device_name": "Software For Visualization Of Vascular Anatomy And Intravascular Devices"
+    },
+    {
+      "product_code": "QIH",
+      "regulation_number": "892.2050",
+      "device_name": "Automated Radiological Image Processing Software"
+    },
+    {
+      "product_code": "QKB",
+      "regulation_number": "892.2050",
+      "device_name": "Radiological Image Processing Software For Radiation Therapy"
+    },
+    {
+      "product_code": "QQE",
+      "regulation_number": "892.2050",
+      "device_name": "Image Management Software For Planning Of Otologic And Neurotologic Procedures"
+    },
+    {
+      "product_code": "QTZ",
+      "regulation_number": "892.2050",
+      "device_name": "Radiological Image Processing Software For Ablation Therapy Planning And Evaluation"
+    }
+  ]
+}
