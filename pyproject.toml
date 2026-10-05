@@ -1,0 +1,45 @@
+[project]
+name = "viewer-vigilance-kit"
+version = "0.1.0"
+description = "Release support for a medical imaging viewer: public vigilance monitoring (openFDA, BfArM) plus a tested minimal DICOM viewer core."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Pavan Yadava Annappa" }]
+dependencies = [
+    "numpy>=1.26",
+    "pydicom>=3.0",
+    "pillow>=10.0",
+    "requests>=2.31",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+vigil = "vigil.cli:main"
+dicomview = "viewer.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vigil", "viewer"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "smoke: fast does-it-run checks (tier 1)",
+    "unit: hand-checked expected values (tier 2)",
+    "golden: golden-image regression (tier 3)",
+    "vigil: vigilance monitor tests",
+]
