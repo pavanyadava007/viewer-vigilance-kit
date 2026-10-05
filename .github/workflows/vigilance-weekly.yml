@@ -1,0 +1,60 @@
+name: vigilance-weekly
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      open_issue:
+        description: "Open or update the digest issue"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.11"
+      - run: uv sync --frozen
+      # The state file (uids already reported) persists between runs via the Actions cache.
+      - name: restore state
+        uses: actions/cache/restore@v4
+        with:
+          path: data/state.json
+          key: vigil-state-${{ github.run_id }}
+          restore-keys: vigil-state-
+      - name: run monitor
+        run: .venv/bin/python -m vigil run
+      - name: save state
+        uses: actions/cache/save@v4
+        with:
+          path: data/state.json
+          key: vigil-state-${{ github.run_id }}
+      - name: job summary
+        run: cat reports/latest.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vigilance-digest-${{ github.run_number }}
+          path: |
+            reports/digest-*.md
+            reports/digest-*.csv
+            reports/latest.json
+      - name: open or update digest issue
+        if: github.event_name == 'schedule' || inputs.open_issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Vigilance digest (weekly)"
+          num=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number')
+          if [ -n "$num" ]; then
+            gh issue comment "$num" --body-file reports/latest.md
+          else
+            gh issue create --title "$title" --body-file reports/latest.md
+          fi

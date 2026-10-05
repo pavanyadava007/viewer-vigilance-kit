@@ -1,0 +1,38 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.11"
+      - run: uv sync --extra dev --frozen
+      - name: release-candidate gate
+        run: .venv/bin/python scripts/rc_gate.py
+      - name: build wheel and sdist
+        run: uv build
+      - name: release notes from conventional commits
+        run: .venv/bin/python scripts/release_notes.py --tag "$GITHUB_REF_NAME" --out reports/rc/RELEASE_NOTES.md
+      - name: bundle evidence
+        run: |
+          mkdir -p evidence
+          cp reports/rc/rc_report.md reports/rc/rc_gate.json reports/rc/junit.xml \
+             reports/rc/traceability.md reports/rc/mutants.json evidence/
+          cp reports/sample/digest-sample.md reports/sample/digest-sample.csv evidence/
+      - name: create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* evidence/* \
+            --title "$GITHUB_REF_NAME" --notes-file reports/rc/RELEASE_NOTES.md

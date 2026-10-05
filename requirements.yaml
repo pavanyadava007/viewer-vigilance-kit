@@ -1,0 +1,100 @@
+# Software requirements for the viewer core and the vigilance monitor, mapped to tests.
+# scripts/traceability.py prints the matrix and fails if a requirement has no test or
+# names a test that does not exist. Structured like a medical-software trace matrix;
+# it is not a regulatory document.
+requirements:
+  - id: VWR-001
+    text: Modality values are computed as raw * RescaleSlope + RescaleIntercept in floating point (no wrap-around of unsigned storage).
+    tests:
+      - tests/test_viewer_unit.py::test_rescale_uint16_negative_intercept
+      - tests/test_viewer_unit.py::test_rescale_slope_and_int16
+      - tests/test_viewer_unit.py::test_ct_small_hu_range
+      - tests/test_viewer_unit.py::test_phantom_hu_values
+  - id: VWR-002
+    text: The default window is taken from WindowCenter/WindowWidth (first value if multi-valued), else from the min/max of modality values.
+    tests:
+      - tests/test_viewer_unit.py::test_window_from_tags_multivalue_takes_first
+      - tests/test_viewer_unit.py::test_window_from_tags_single_and_missing
+      - tests/test_viewer_unit.py::test_phantom_window_from_multivalued_tags
+      - tests/test_viewer_unit.py::test_mr_small_window_tags
+      - tests/test_viewer_unit.py::test_default_window_min_max_fallback
+  - id: VWR-003
+    text: Window/level uses the DICOM linear VOI function (centre - 0.5, width - 1) and maps to 0..255.
+    tests:
+      - tests/test_viewer_unit.py::test_apply_window_hand_values
+      - tests/test_viewer_unit.py::test_apply_window_width_one_is_threshold
+  - id: VWR-004
+    text: MONOCHROME1 images are displayed inverted.
+    tests:
+      - tests/test_viewer_unit.py::test_monochrome1_inverted
+  - id: VWR-005
+    text: Contrast adjustment narrows the window for contrast > 1; brightness shifts the centre.
+    tests:
+      - tests/test_viewer_unit.py::test_adjust_window_contrast_and_brightness
+  - id: VWR-006
+    text: Slices of a series are ordered by position along the slice normal; InstanceNumber is the fallback.
+    tests:
+      - tests/test_viewer_unit.py::test_slice_normal
+      - tests/test_viewer_unit.py::test_sort_axial_phantom
+      - tests/test_viewer_unit.py::test_sort_sagittal_uses_normal_not_z
+      - tests/test_viewer_unit.py::test_sort_real_ct5n_series
+      - tests/test_viewer_unit.py::test_sort_fallback_instance_number
+  - id: VWR-007
+    text: Orientation labels on the four screen edges follow ImageOrientationPatient in LPS (L/R, A/P, H/F).
+    tests:
+      - tests/test_viewer_unit.py::test_direction_letters
+      - tests/test_viewer_unit.py::test_orientation_labels_axial
+      - tests/test_viewer_unit.py::test_orientation_labels_sagittal
+  - id: VWR-008
+    text: Distances are reported in mm using PixelSpacing (row spacing for row offsets, column spacing for column offsets); no PixelSpacing means no mm measurement.
+    tests:
+      - tests/test_viewer_unit.py::test_distance_mm_anisotropic
+      - tests/test_viewer_unit.py::test_distance_mm_isotropic_and_missing
+      - tests/test_viewer_unit.py::test_distance_on_phantom
+  - id: VWR-009
+    text: Zoom is about the image centre; pan moves the image in the drag direction; screen and image coordinates are inverse mappings.
+    tests:
+      - tests/test_viewer_unit.py::test_viewport_identity
+      - tests/test_viewer_unit.py::test_viewport_zoom_two_is_centre_crop
+      - tests/test_viewer_unit.py::test_image_to_screen_zoom_about_centre
+      - tests/test_viewer_unit.py::test_pan_moves_image_with_drag
+      - tests/test_viewer_unit.py::test_screen_image_roundtrip
+  - id: VWR-010
+    text: Rendered output (pixels and overlay) is unchanged against reviewed golden references.
+    tests:
+      - tests/test_viewer_golden.py::test_golden_set_complete
+      - tests/test_viewer_golden.py::test_golden_pixels
+      - tests/test_viewer_golden.py::test_golden_overlay
+  - id: VWR-011
+    text: The CLI renders a PNG with overlays for a single image or a series.
+    tests:
+      - tests/test_viewer_smoke.py::test_cli_writes_png
+      - tests/test_viewer_smoke.py::test_cli_series_and_contrast
+      - tests/test_viewer_smoke.py::test_render_returns_rgb_of_viewport_size
+  - id: VIG-001
+    text: openFDA MAUDE events and recalls are mapped to the common incident schema.
+    tests:
+      - tests/test_vigil.py::test_maude_to_incident
+      - tests/test_vigil.py::test_recall_to_incident
+  - id: VIG-002
+    text: BfArM notices are parsed from RSS, list and detail pages including Produktgruppe and Referenznummer.
+    tests:
+      - tests/test_vigil.py::test_parse_rss
+      - tests/test_vigil.py::test_parse_list_page
+      - tests/test_vigil.py::test_parse_detail_page
+      - tests/test_vigil.py::test_split_title
+  - id: VIG-003
+    text: Duplicates are removed and a run reports only items not seen in an earlier run.
+    tests:
+      - tests/test_vigil.py::test_dedupe
+      - tests/test_vigil.py::test_state_reports_only_new
+  - id: VIG-004
+    text: Relevance and categories come from transparent rules in rules.yaml.
+    tests:
+      - tests/test_vigil.py::test_tagger_categories
+      - tests/test_vigil.py::test_tag_bfarm_group_relevance
+  - id: VIG-005
+    text: The digest lists counts per source and category with links, as Markdown and CSV.
+    tests:
+      - tests/test_vigil.py::test_digest_markdown_and_csv
+      - tests/test_vigil.py::test_run_offline_end_to_end
