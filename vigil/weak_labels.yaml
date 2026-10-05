@@ -1,0 +1,52 @@
+# Weak labels used only for evaluation. They come from the agencies, not from the author.
+#
+# BfArM: the agency assigns every field safety notice a "Produktgruppe".
+bfarm:
+  imaging:            # label A: imaging hardware or software
+    - "Radiologische Technik"
+  software_or_imaging: # label B: imaging + medical software + diagnostic ultrasound
+    - "Radiologische Technik"
+    - "Medizinische Datenverarbeitung (Software)"
+    - "Ultraschalltechnik"
+
+# openFDA MAUDE: each report carries FDA device "product_problems" terms
+# (chosen by the reporter / manufacturer). Mapping fixed before running the evaluation.
+maude_problem_to_category:
+  image_display:
+    - "No Display/Image"
+    - "Image Display Error/Artifact"
+    - "Poor Quality Image"
+    - "Display or Visual Feedback Problem"
+    - "Erratic or Intermittent Display"
+    - "Blank screen"
+    - "Display Difficult to Read"
+    - "Image Resolution Poor"
+  wrong_patient:
+    - "Patient Data Problem"
+  measurement:
+    - "Incorrect Measurement"
+    - "Measurements, inaccurate"
+    - "Application Program Problem: Parameter Calculation Error"
+    - "Incorrect Software Programming Calculations"
+    - "Calibration Problem"
+    - "Failure to Calibrate"
+    - "Calibration Error"
+  orientation_laterality:
+    - "Image Orientation Incorrect"
+    - "Image Reversal"
+  data_loss:
+    - "Loss of Data"
+    - "Missing Test Results"
+    - "Failure to Back-Up"
+    - "Data Back-Up Problem"
+  performance_freeze:
+    - "Application Program Freezes or Fails to Launch"
+    - "Application Interface Becomes Non-Functional Or Program Exits Abnormally"
+    - "Unintended Application Program Shut Down"
+    - "Device Stops Intermittently"
+  interoperability:
+    - "Communication or Transmission Problem"
+    - "Failure to Transmit Record"
+  cybersecurity:
+    - "Computer System Security Problem"
+    - "Unauthorized Access to Computer System"

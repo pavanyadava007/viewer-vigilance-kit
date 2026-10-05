@@ -1,0 +1,98 @@
+# Transparent, case-insensitive regex rules. English + German terms.
+# A rule list matches if any pattern matches the incident text (title for BfArM,
+# narrative for MAUDE, description + reason for recalls).
+# Written from domain knowledge before looking at evaluation labels. Lines marked
+# "dev-split change" were edited after inspecting errors on the dev split only;
+# the test split (scripts/eval_tagger.py) was not inspected.
+
+relevance:
+  # "software / imaging relevant" flag
+  - '\bsoftware\b'
+  - '\bsw\b'
+  - '\bpacs\b'
+  - '\bviewer\b'
+  - '\bdicom\b'
+  - '\bimag(e|es|ing)\b'
+  - '\bbild'
+  - '\b(ct|mrt?|mri|pet|spect)\b'
+  - 'computed tomograph|computertomogra|tomograph|tomosynth'
+  - 'x-?ray|r(ö|oe)ntgen|radiogra|radiolog|fluorosc|durchleucht'
+  - 'mammo'
+  - 'ultrasound|ultraschall|sonogra'
+  - 'angiogra'
+  - 'c-arm|c-bogen'
+  - 'detector|detektor'
+  - 'workstation|arbeitsstation'
+  - 'visuali[sz]'
+  - 'magnetom|somatom|ingenia|revolution|aquilion|optima|signa|discovery|vereos|biograph'
+  # dev-split change: generic software words
+  - '\bapps?\b|application|anwendung'
+  - '\bserver\b|\bsuite\b|informationssystem|\bkis\b'
+
+categories:
+  image_display:
+    - 'display(ed|s|ing)?\b'
+    - '\brender'
+    - 'artifact|artefact'
+    - 'blank (screen|image|page)'
+    - 'black (screen|image)'
+    - '(no|missing) (image|picture) (is |was )?(shown|displayed)'
+    - 'not (be )?(shown|displayed|visible)'
+    - 'image quality|poor quality'
+    - 'distort'
+    - 'darstellung|anzeige'
+  wrong_patient:
+    - '(wrong|incorrect|another|different|other) patient'
+    - 'patient (mix|mismatch|identification|demographic)'
+    - 'mismatch'
+    - '(wrong|incorrect) (study|exam|series|accession)'
+    - 'merged (study|studies|patient)'
+    - 'accession'
+    - 'patientenverwechslung|falsche[nmrs]? patient'
+  measurement:
+    - 'measur'
+    - 'calibrat'
+    - 'distance'
+    - 'pixel spacing'
+    - '(volume|area|length|angle|dose) (calculation|value|result)'
+    - 'miscalculat|calculation error|incorrect(ly)? calculat'
+    - 'messung|messwert|kalibrier'
+  orientation_laterality:
+    - 'orientation'
+    - 'laterality'
+    - 'left[- /]right|right[- /]left'
+    - '\bflip'
+    - 'mirror'
+    - 'reversed|inverted image|upside'
+    - 'seitenverwechslung|orientierung|gespiegelt'
+  data_loss:
+    - 'missing (image|images|series|slice|slices|data|study|studies|report)'
+    - '\blost\b|loss of data|data loss'
+    - 'not (be )?(saved|stored|archived|retrieved)'
+    - 'deleted|incomplete'
+    - 'unable to (fetch|retrieve|load|open)'
+    - 'datenverlust|fehlende'
+  performance_freeze:
+    - 'freez|froze|hang(s|ing)?\b'
+    - 'crash'
+    - 'unresponsive|not respond'
+    # dev-split change: dropped bare 'delay' and 'performance' (boilerplate "delay in treatment")
+    - '\bslow(ness|ly|er)?\b|latency|performance (issue|degradation|problem)'
+    - 'restart|reboot'
+    - 'fail(ed|s)? to (launch|start)'
+    - 'absturz|einfrier'
+  interoperability:
+    - '\bdicom\b|\bhl7\b'
+    - 'interface'
+    - 'transfer|transmi|routing|worklist'
+    - '\b(send|sent|export|import)\b'
+    # dev-split change: dropped bare 'integration' / 'compatib'
+    - 'interoperab|incompatib'
+    - 'schnittstelle|(ü|ue)bertragung'
+  cybersecurity:
+    - 'cyber'
+    - 'vulnerab'
+    - 'unauthori[sz]ed'
+    - 'security'
+    - 'ransomware|malware'
+    - 'sicherheitsl(ü|ue)cke|cybersicherheit'

@@ -1,0 +1,25 @@
+# Sources and product codes for the vigilance monitor.
+# FDA product codes were looked up and verified against the openFDA
+# classification endpoint by scripts/verify_product_codes.py
+# (results/product_codes.json holds the official names returned by the API).
+fda:
+  product_codes:
+    LLZ: "System, Image Processing, Radiological"
+    LMD: "System, Digital Image Communications, Radiological"
+    LMB: "Device, Digital Image Storage, Radiological"
+    PGY: "Display, Diagnostic Radiology"
+    QIH: "Automated Radiological Image Processing Software"
+  maude_days: 365      # window on date_received for the corpus fetch
+  recall_days: 730     # window on event_date_initiated
+  max_records_per_code: 1000
+bfarm:
+  rss_url: "https://www.bfarm.de/SiteGlobals/Functions/RSSFeed/DE/Medizinprodukte/Kundeninfo/RSSNewsfeed.xml?nn=597716"
+  list_url: "https://www.bfarm.de/DE/Medizinprodukte/Aufgaben/Risikobewertung-und-Forschung/Massnahmen-von-Herstellern/_node.html"
+  list_pages: 10       # 50 notices per page; the list exposes 10 pages (500 newest)
+  relevant_groups:     # agency Produktgruppe prefixes treated as relevant in the digest
+    - "Radiologische Technik"
+    - "Medizinische Datenverarbeitung (Software)"
+    - "Ultraschalltechnik"
+  fetch_details: true  # open each RSS item's detail page for Produktgruppe / Referenznummer
+http:
+  min_interval_s: 1.0
